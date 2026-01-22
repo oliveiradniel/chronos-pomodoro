@@ -6,7 +6,7 @@ export type ButtonProps = ComponentProps<'button'> &
   VariantProps<typeof button>;
 
 const button = tv({
-  base: 'bg-primary text-over-primary h-10 hover:bg-primary/70 flex  cursor-pointer items-center justify-center rounded-sm transition-colors',
+  base: 'bg-primary text-over-primary h-10 hover:bg-primary/70 flex  cursor-pointer items-center justify-center rounded-sm transition-colors focus-visible:outline-2 outline-offset-2 outline-primary',
   variants: {
     size: {
       default: 'w-full max-w-[180px]',
