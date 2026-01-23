@@ -15,7 +15,7 @@ export function Header() {
         <TimerIcon aria-hidden="true" className="size-15" /> Chronos
       </h1>
 
-      <div className="flex items-center justify-center gap-4">
+      <nav className="flex items-center justify-center gap-4">
         <Button size="icon" type="button">
           <HomeIcon />
         </Button>
@@ -31,7 +31,7 @@ export function Header() {
         <Button size="icon" type="button">
           <SunIcon />
         </Button>
-      </div>
+      </nav>
     </header>
   );
 }
