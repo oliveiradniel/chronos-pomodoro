@@ -1,9 +1,8 @@
 import { useForm } from 'react-hook-form';
 
-import { PlayCircleIcon } from 'lucide-react';
-
-import { Button } from './button';
 import { Input } from './input';
+import { Cycles } from './cycles';
+import { TimerButton } from './timer-button';
 
 export function Form() {
   const form = useForm<{ titleTask: string }>();
@@ -26,13 +25,13 @@ export function Form() {
           placeholder="Tarefa"
         />
 
-        <span className="mt-3 text-center text-sm">
+        <span className="mt-4 text-center text-sm">
           O próximo ciclo é de <strong>30min</strong>
         </span>
 
-        <Button type="submit" className="mt-12">
-          <PlayCircleIcon />
-        </Button>
+        <Cycles />
+
+        <TimerButton status="finished" className="mt-10" />
       </form>
     </div>
   );
