@@ -6,14 +6,14 @@ export type ButtonProps = ComponentProps<'button'> &
   VariantProps<typeof button>;
 
 const button = tv({
-  base: 'h-10 flex cursor-pointer items-center justify-center rounded-sm transition-colors focus-visible:outline-2 outline-offset-2 outline-primary',
+  base: 'h-10 flex text-gray-100 dark:text-gray-900 cursor-pointer items-center justify-center rounded-sm transition-colors focus-visible:outline-2 outline-offset-2 outline-primary',
   variants: {
     size: {
       default: 'w-full',
       icon: 'w-10',
     },
     background: {
-      default: 'bg-primary text-over-primary hover:bg-primary/70',
+      default: 'bg-primary hover:bg-primary/70',
       destructive: 'bg-error text-over-error hover:bg-error/70',
     },
   },

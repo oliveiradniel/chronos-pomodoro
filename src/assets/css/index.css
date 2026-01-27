@@ -1,16 +1,13 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 :root {
   --text-default: #e6e9f0;
   --bg-default: #0a0f1a;
 }
 
-@theme inline {
-  --color-gray-900: var(--bg-default);
-}
-
 @theme {
-  --color-primary: pink;
   --color-gray-100: #e6e9f0;
   --color-gray-200: #cdd3e1;
   --color-gray-300: #aab3cc;
@@ -19,6 +16,7 @@
   --color-gray-600: #363d56;
   --color-gray-700: #272f43;
   --color-gray-800: #181f2e;
+  --color-gray-900: #0a0f1a;
 
   --color-primary-light: #4de7b7;
   --color-primary: #0da170;
@@ -60,6 +58,4 @@ body {
     'Open Sans',
     'Helvetica Neue',
     sans-serif;
-  color: var(--text-default);
-  background-color: var(--bg-default);
 }
