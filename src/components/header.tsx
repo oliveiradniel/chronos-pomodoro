@@ -35,7 +35,7 @@ export function Header() {
   }, [theme]);
 
   return (
-    <header className="flex flex-col gap-8">
+    <header className="mb-12 flex flex-col gap-8">
       <h1 className="text-primary flex flex-col items-center gap-2 text-4xl font-bold">
         <TimerIcon aria-hidden="true" className="size-15" /> Chronos
       </h1>

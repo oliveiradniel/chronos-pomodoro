@@ -3,11 +3,13 @@ import { createRoot } from 'react-dom/client';
 
 import { App } from './app.tsx';
 
-const element = document.getElementById('root')!;
-const root = createRoot(element);
+const rootElement = document.getElementById('root')!;
+if (!rootElement.innerHTML) {
+  const root = createRoot(rootElement);
 
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+  );
+}
