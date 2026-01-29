@@ -1,9 +1,14 @@
 import { Link } from '@tanstack/react-router';
 
 export function NotFound() {
+  const ariaDescribedby = 'not-found';
+
   return (
-    <div className="flex flex-col gap-8">
-      <h1 className="flex flex-col items-center gap-2 text-center text-4xl font-bold">
+    <div aria-describedby={ariaDescribedby} className="flex flex-col gap-8">
+      <h1
+        id={ariaDescribedby}
+        className="flex flex-col items-center gap-2 text-center text-3xl font-bold sm:text-4xl"
+      >
         404 - Página não encontrada
       </h1>
 
