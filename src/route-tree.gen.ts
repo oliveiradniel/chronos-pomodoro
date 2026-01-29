@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SobreATecnicaPomodoroRouteImport } from './routes/sobre-a-tecnica-pomodoro'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SobreATecnicaPomodoroRoute = SobreATecnicaPomodoroRouteImport.update({
+  id: '/sobre-a-tecnica-pomodoro',
+  path: '/sobre-a-tecnica-pomodoro',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SplatRoute = SplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/sobre-a-tecnica-pomodoro': typeof SobreATecnicaPomodoroRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/sobre-a-tecnica-pomodoro': typeof SobreATecnicaPomodoroRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/sobre-a-tecnica-pomodoro': typeof SobreATecnicaPomodoroRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$'
+  fullPaths: '/' | '/$' | '/sobre-a-tecnica-pomodoro'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$'
-  id: '__root__' | '/' | '/$'
+  to: '/' | '/$' | '/sobre-a-tecnica-pomodoro'
+  id: '__root__' | '/' | '/$' | '/sobre-a-tecnica-pomodoro'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  SobreATecnicaPomodoroRoute: typeof SobreATecnicaPomodoroRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sobre-a-tecnica-pomodoro': {
+      id: '/sobre-a-tecnica-pomodoro'
+      path: '/sobre-a-tecnica-pomodoro'
+      fullPath: '/sobre-a-tecnica-pomodoro'
+      preLoaderRoute: typeof SobreATecnicaPomodoroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/$': {
       id: '/$'
       path: '/$'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  SobreATecnicaPomodoroRoute: SobreATecnicaPomodoroRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
